@@ -2,6 +2,7 @@ public class TodoList {
     public static String[] model = new String[10];
 
     public static void main(String[] args) {
+        testAddTodoList();
         testShowTodoList();
     }
 
@@ -50,6 +51,12 @@ public class TodoList {
                 model[i] = todo;
                 break;
             }
+        }
+    }
+
+    public static void testAddTodoList(){
+        for (var i = 0; i < 25; i++){
+            addTodoList("todo-" + i);
         }
     }
 
