@@ -9,7 +9,14 @@ public class TodoList {
      * Display todo list
      */
     public static void showTodoList() {
+        for( var i = 0; i < model.length; i++){
+            String todo = model[i];
+            var no = i++;
 
+            if (todo != null) {
+                System.out.println(no + "." + todo);
+            }
+        }
     }
 
     /**
