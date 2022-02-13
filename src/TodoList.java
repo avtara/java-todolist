@@ -25,4 +25,25 @@ public class TodoList {
     public static void deleteTodoList(){
 
     }
+
+    /**
+     * Display view todolist menu
+     */
+    public static void viewShowTodoList(){
+
+    }
+
+    /**
+     * Display view add todolist
+     */
+    public static void viewAddTodoList(){
+
+    }
+
+    /**
+     * Display view remove todolist
+     */
+    public static void viewRemoveTodoList(){
+
+    }
 }
