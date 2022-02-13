@@ -9,7 +9,7 @@ public class TodoList {
      * Display todo list
      */
     public static void showTodoList() {
-        for( var i = 0; i < model.length; i++){
+        for (var i = 0; i < model.length; i++) {
             String todo = model[i];
             var no = i + 1;
 
@@ -28,35 +28,56 @@ public class TodoList {
     /**
      * Add todo list items
      */
-    public static void addTodoList(){
+    public static void addTodoList(String todo) {
+        var isFull = true;
+        for (var i = 0; i < model.length; i++) {
+            if (model[i] == null) {
+                isFull = false;
+                break;
+            }
+        }
 
+        if (isFull) {
+            var temp = model;
+            model = new String[model.length * 2];
+            for (var i = 0; i < temp.length; i++) {
+                model[i] = temp[i];
+            }
+        }
+
+        for (var i = 0; i < model.length; i++) {
+            if (model[i] == null) {
+                model[i] = todo;
+                break;
+            }
+        }
     }
 
     /**
      * Remove todo list items
      */
-    public static void deleteTodoList(){
+    public static void deleteTodoList() {
 
     }
 
     /**
      * Display view todolist menu
      */
-    public static void viewShowTodoList(){
+    public static void viewShowTodoList() {
 
     }
 
     /**
      * Display view add todolist
      */
-    public static void viewAddTodoList(){
+    public static void viewAddTodoList() {
 
     }
 
     /**
      * Display view remove todolist
      */
-    public static void viewRemoveTodoList(){
+    public static void viewRemoveTodoList() {
 
     }
 }
