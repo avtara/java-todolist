@@ -63,8 +63,17 @@ public class TodoList {
     /**
      * Remove todo list items
      */
-    public static void deleteTodoList() {
+    public static boolean deleteTodoList(Integer number) {
+        if ((number - 1) >= model.length){
+            return false;
+        }
 
+        if (model[number - 1] == null){
+            return false;
+        }else {
+            model[number - 1] = null;
+            return true;
+        }
     }
 
     /**
