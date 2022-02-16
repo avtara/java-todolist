@@ -5,7 +5,7 @@ public class TodoList {
     public static java.util.Scanner scanner = new Scanner(System.in);
 
     public static void main(String[] args) {
-        testDeleteTodoList();
+        testInput();
     }
 
     /**
@@ -95,9 +95,14 @@ public class TodoList {
     }
 
     public static String input(String info) {
-        System.out.println(info + " : ");
+        System.out.print(info + " : ");
         String data = scanner.nextLine();
         return data;
+    }
+
+    public static void testInput(){
+        var data = input("Nama");
+        System.out.println("Hi " + data);
     }
 
     /**
