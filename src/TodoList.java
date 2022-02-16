@@ -1,5 +1,8 @@
+import java.util.Scanner;
+
 public class TodoList {
     public static String[] model = new String[10];
+    public static java.util.Scanner scanner = new Scanner(System.in);
 
     public static void main(String[] args) {
         testDeleteTodoList();
@@ -73,7 +76,7 @@ public class TodoList {
             for (int i = number - 1; i < model.length; i++) {
                 if (i == (model.length - 1)) {
                     model[i] = null;
-                }else {
+                } else {
                     model[i] = model[i + 1];
                 }
             }
@@ -89,6 +92,12 @@ public class TodoList {
         var result = deleteTodoList(4);
         System.out.println(result);
         showTodoList();
+    }
+
+    public static String input(String info) {
+        System.out.println(info + " : ");
+        String data = scanner.nextLine();
+        return data;
     }
 
     /**
