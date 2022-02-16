@@ -2,8 +2,7 @@ public class TodoList {
     public static String[] model = new String[10];
 
     public static void main(String[] args) {
-        testAddTodoList();
-        testShowTodoList();
+        testDeleteTodoList();
     }
 
     /**
@@ -54,8 +53,8 @@ public class TodoList {
         }
     }
 
-    public static void testAddTodoList(){
-        for (var i = 0; i < 25; i++){
+    public static void testAddTodoList() {
+        for (var i = 0; i < 25; i++) {
             addTodoList("todo-" + i);
         }
     }
@@ -64,16 +63,32 @@ public class TodoList {
      * Remove todo list items
      */
     public static boolean deleteTodoList(Integer number) {
-        if ((number - 1) >= model.length){
+        if ((number - 1) >= model.length) {
             return false;
         }
 
-        if (model[number - 1] == null){
+        if (model[number - 1] == null) {
             return false;
-        }else {
-            model[number - 1] = null;
+        } else {
+            for (int i = number - 1; i < model.length; i++) {
+                if (i == (model.length - 1)) {
+                    model[i] = null;
+                }else {
+                    model[i] = model[i + 1];
+                }
+            }
             return true;
         }
+    }
+
+    public static void testDeleteTodoList() {
+        addTodoList("satu");
+        addTodoList("dua");
+        addTodoList("tiga");
+
+        var result = deleteTodoList(4);
+        System.out.println(result);
+        showTodoList();
     }
 
     /**
